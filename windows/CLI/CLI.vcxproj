@@ -147,6 +147,8 @@
     <LinkIncremental>false</LinkIncremental>
     <TargetName>sedutil-cli</TargetName>
     <IntDir>$(OutDir)\OBJDIR\</IntDir>
+    <PreBuildEventUseInBuild>false</PreBuildEventUseInBuild>
+    <PreLinkEventUseInBuild>false</PreLinkEventUseInBuild>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -244,6 +246,7 @@
       <SDLCheck>true</SDLCheck>
       <AdditionalIncludeDirectories>$(SolutionDir)..\;$(SolutionDir)..\..\common;$(SolutionDir)..\..\common\pbkdf2</AdditionalIncludeDirectories>
       <TreatWarningAsError>true</TreatWarningAsError>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
