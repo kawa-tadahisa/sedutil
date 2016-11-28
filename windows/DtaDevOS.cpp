@@ -88,8 +88,15 @@ void DtaDevOS::init(const char * devref)
 		disk = new DtaDiskATA();
 		break;
 	case BusTypeUsb:
-		disk = new DtaDiskUSB();
-		break;
+		{
+			disk = nullptr;
+			disk_info.ANY_OPAL_SSC = 0;
+			char model[] = "Skipped USB Disk";
+			memcpy(&disk_info.modelNum, model, sizeof(model));
+			char serial[] = "(None)";
+			memcpy(&disk_info.firmwareRev, serial, sizeof(serial));
+		}
+		return;
 	default:
 		return;
 	}
