@@ -268,7 +268,7 @@ int main(int argc, char * argv[])
         LOG(D) << "Performing PBKDF2 validation ";
         TestPBKDF2();
         break;
-	case sedutiloption::yesIreallywanttoERASEALLmydatausingthePSID:
+	case sedutiloption::revertPSID:
 	case sedutiloption::PSIDrevert:
 		LOG(D) << "Performing a PSID Revert on " << argv[opts.device] << " with password " << argv[opts.password];
         return d->revertTPer(argv[opts.password], 1, 0);

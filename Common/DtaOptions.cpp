@@ -90,7 +90,7 @@ void usage()
 	printf("                                deactivate the Locking SP \n");
 	printf("                                without erasing the data \n");
 	printf("                                on GLOBAL RANGE *ONLY* \n");
-    printf("--yesIreallywanttoERASEALLmydatausingthePSID <PSID> <device>\n");
+    printf("--revertPSID <PSID> <device>\n");
     printf("                                revert the device using the PSID *ERASING* *ALL* the data \n");
     printf("--printDefaultPassword <device>\n");
     printf("                                print MSID \n");
@@ -98,7 +98,7 @@ void usage()
     printf("Examples \n");
     printf("sedutil-cli --scan \n");
 	printf("sedutil-cli --query %s \n", DEVICEEXAMPLE);
-	printf("sedutil-cli --yesIreallywanttoERASEALLmydatausingthePSID <PSIDALLCAPSNODASHED> %s \n", DEVICEEXAMPLE);
+	printf("sedutil-cli --revertPSID <PSIDALLCAPSNODASHED> %s \n", DEVICEEXAMPLE);
 	printf("sedutil-cli --initialSetup <newSIDpassword> %s \n", DEVICEEXAMPLE);
     return;
 }
@@ -173,7 +173,7 @@ uint8_t DtaOptions(int argc, char * argv[], DTA_OPTIONS * opts)
 		BEGIN_OPTION(revertNoErase, 2) OPTION_IS(password) OPTION_IS(device) END_OPTION
 		BEGIN_OPTION(PSIDrevert, 2) OPTION_IS(password) OPTION_IS(device) END_OPTION
 		BEGIN_OPTION(PSIDrevertAdminSP, 2) OPTION_IS(password) OPTION_IS(device) END_OPTION
-		BEGIN_OPTION(yesIreallywanttoERASEALLmydatausingthePSID, 2) OPTION_IS(password) 
+		BEGIN_OPTION(revertPSID, 2) OPTION_IS(password) 
 			OPTION_IS(device) END_OPTION
 		BEGIN_OPTION(enableuser, 2) OPTION_IS(password) OPTION_IS(userid) 
 			OPTION_IS(device) END_OPTION
